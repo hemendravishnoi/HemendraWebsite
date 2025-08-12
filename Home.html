@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hemendra Vishnoi | Tech Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #333333; /* Charcoal Gray */
+      color: #dddcdc; /* Light Gray for text */
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #FF6F00; /* Orange */
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a:hover {
+      color: #ff9900;
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #2b2b2b; /* Slightly lighter charcoal */
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.3rem;
+      color: #FF6F00;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 5px rgba(255,111,0,0.7);
+    }
+    header p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #ccc;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      background-color: #444444; /* Dark Gray block */
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #FF6F00;
+      padding-bottom: 0.3rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FF6F00;
+      text-shadow: 1px 1px 4px rgba(255,111,0,0.7);
+    }
+    section p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #dddcdc;
+      line-height: 1.5;
+    }
+
+    ul.skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    ul.skills-list li {
+      background-color: #FF6F00;
+      color: #2b2b2b;
+      padding: 0.6rem 1.3rem;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(255,111,0,0.6);
+      user-select: none;
+      cursor: default;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      transition: transform 0.3s ease;
+    }
+    ul.skills-list li:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(255,111,0,0.9);
+    }
+
+    .resume-cover {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    .resume-cover a {
+      flex: 1 1 250px;
+      background-color: #FF6F00;
+      color: #2b2b2b;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 15px rgba(255,111,0,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .resume-cover a:hover {
+      background-color: #ff9900;
+      box-shadow: 0 10px 30px rgba(255,153,0,0.85);
+    }
+
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .portfolio-list li {
+      background-color: #555555;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .portfolio-list li:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 14px 40px rgba(255,111,0,0.85);
+      z-index: 5;
+    }
+    .portfolio-list img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 4px solid #FF6F00;
+      transition: filter 0.3s ease;
+    }
+    .portfolio-list li:hover img {
+      filter: brightness(1.1);
+    }
+    .portfolio-content {
+      padding: 1rem 1.3rem;
+    }
+    .portfolio-content h3 {
+      color: #FF6F00;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .portfolio-content p {
+      color: #e0e0e0cc;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    #contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #e0e0e0cc;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.2rem;
+      color: #dddcdc;
+      user-select: text;
+    }
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      min-width: 220px;
+      background-color: #444444;
+      border-radius: 35px;
+      padding: 0.7rem 1.5rem;
+      box-shadow: 0 3px 10px rgba(255,111,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .contact-info div:hover {
+      background-color: #FF6F00;
+      color: #2b2b2b;
+      box-shadow: 0 6px 20px rgba(255,111,0,0.7);
+    }
+    .contact-info svg {
+      fill: #FF6F00;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 2px rgba(255,111,0,0.8));
+      transition: fill 0.3s ease;
+    }
+    .contact-info a {
+      color: inherit;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #2b2b2b;
+      color: #FF6F00;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      user-select: none;
+      box-shadow: inset 0 2px 6px rgba(255,111,0,0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 2rem 1rem 3rem;
+        padding: 1rem 1.2rem;
+      }
+      .resume-cover a {
+        flex: 1 1 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+      }
+      .contact-info div {
+        min-width: auto;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hemendra Vishnoi</h1>
+  <p>Senior Automation Engineer | Software Quality Architect | AI & ML Enthusiast</p>
+</header>
+
+<main>
+
+  <section id="about" aria-label="About Me">
+    <h2>About Me</h2>
+    <p>
+      Experienced and results-driven SDET with 15+ years in test
+automation and software quality engineering. Skilled in
+designing scalable automation frameworks and improving QA
+processes using industry-standard tools. Proven success in
+enhancing test efficiency, software quality, and delivery speed
+across financial and enterprise platforms. Strong leadership in
+cross-functional teams, aligning testing strategies with business
+goals in Agile, high-impact environments. Expert in multitasking,
+front-end testing, back-end testing, manual testing,
+microservices architecture testing, quality assurance life cycle.
+    </p>
+  </section>
+
+  <section id="skills" aria-label="Technical Skills">
+    <h2>Technical Skills</h2>
+    <ul class="skills-list" aria-describedby="skills-desc">
+      <li>Testing Roadmap</li>
+      <li>Testing Strategies and Planning</li>
+      <li>Agile</li>
+      <li>Programming (C# & Java)</li>
+      <li>JavaScript & TypeScript</li>
+      <li>Git & GitHub</li>
+      <li>Test Automation Architecture</li>
+      <li>Web, API & Mobile Automation</li>
+      <li>Behavior-Driven Development</li>
+      <li>CI/CD pipelines</li>
+      <li>Test Reporting</li>
+      <li>Kubernetes & Docker</li>
+      <li>Monitoring & Logging</li>
+      <li>AI & Machine Learning</li>
+      <li>Cloud Platforms (AWS & Azure)</li>
+    </ul>
+  </section>
+
+  <section id="resume-cover" aria-label="Resume and Cover Letter">
+    <h2>Resume & Cover Letter</h2>
+    <div class="resume-cover">
+      <a href="./Documents/HemendraVishnoi.pdf" target="_blank" rel="noopener" aria-label="View Resume PDF">View Resume</a>
+      <a href="./Documents/Hemendra_CoverLetter.pdf" target="_blank" rel="noopener" aria-label="View Cover Letter PDF">View Cover Letter</a>
+    </div>
+  </section>
+
+  <section id="github-portfolio" aria-label="GitHub and Portfolio">
+    <h2>GitHub & Portfolio</h2>
+    <ul class="portfolio-list">
+      <li tabindex="0" role="article" aria-label="Software Development">
+        <img src="./Images/Development.jpg" alt="Software Development Screenshot" />
+        <div class="portfolio-content">
+          <h3><a href="https://github.com/hemendravishnoi/automation-framework" target="_blank" rel="noopener" aria-label="Open Automation Framework repository">Software Development</a></h3>
+          <p>Custom-built framework using SpecFlow and xUnit to run parallel test cases efficiently in Kubernetes clusters.</p>
+        </div>
+      </li>
+      <li tabindex="0" role="article" aria-label="Automation Framework project">
+        <img src="./Images/Test-Automation-Framework.jpg" alt="Automation Framework Project Screenshot" />
+        <div class="portfolio-content">
+          <h3><a href="https://github.com/hemendravishnoi/automation-framework" target="_blank" rel="noopener" aria-label="Open Automation Framework repository">Automation Framework</a></h3>
+          <p>Custom-built framework using SpecFlow and xUnit to run parallel test cases efficiently in Kubernetes clusters.</p>
+        </div>
+      </li>
+      <li tabindex="0" role="article" aria-label="AI and ML Projects">
+        <img src="./Images/AI-ML-networking.png" alt="AI and Machine Learning Projects Screenshot" />
+        <div class="portfolio-content">
+          <h3><a href="https://github.com/hemendravishnoi/ai-ml-projects" target="_blank" rel="noopener" aria-label="Open AI & ML Projects repository">AI & ML Projects</a></h3>
+          <p>Proof-of-concept implementations of machine learning models for automation and analytics.</p>
+        </div>
+      </li>
+      <li tabindex="0" role="article" aria-label="GitHub Profile">
+        <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="GitHub Profile Avatar" />
+        <div class="portfolio-content">
+          <h3><a href="https://github.com/hemendravishnoi" target="_blank" rel="noopener" aria-label="Open GitHub Profile">GitHub Profile</a></h3>
+          <p>Explore repositories including test automation projects and open-source contributions.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" aria-label="Contact Information">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations or inquiries!</p>
+    <div class="contact-info">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8V7l-3 2-2-2-7 7 2 2-2 3H5v-2l3-4-3-3V7l6 6 7-7-2-2 3-1z"/></svg>
+        <span>hemendravishnoi@gmail.com</span>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.534 15.534 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.52.73 3.85.73a1 1 0 011 1v3.5a1 1 0 01-1 1C8.94 21 3 15.06 3 7a1 1 0 011-1h3.5a1 1 0 011 1c0 1.33.25 2.64.73 3.85a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+        <span>+971 50 867 5691</span>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <a href="https://www.linkedin.com/in/hemendra-vishnoi-60419211a/" target="_blank" rel="noopener" aria-label="Open LinkedIn Profile">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 Hemendra Vishnoi. All rights reserved.
+</footer>
+
+</body>
+</html>
