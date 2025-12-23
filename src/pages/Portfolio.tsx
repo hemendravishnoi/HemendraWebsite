@@ -104,7 +104,7 @@ export function Portfolio() {
           <Button variant="secondary" icon={<Linkedin className="w-4 h-4" />} onClick={() => window.open("https://www.linkedin.com/in/hemendra-vishnoi-60419211a/", "_blank")}>
             LinkedIn
           </Button>
-          <Button variant="secondary" icon={<Mail className="w-4 h-4" />} onClick={() => window.open("mailTo:hemendravishnoi@gmail.com", "_blank")}>
+          <Button variant="secondary" icon={<Mail className="w-4 h-4" />} onClick={() => window.open("mailto:hemendravishnoi@gmail.com?subject=Let's%20connect&body=Hi%20Hemendra,", "_blank")}>
             Email
           </Button>
         </div>
@@ -114,9 +114,10 @@ export function Portfolio() {
         </div>
          <p className="text-lg text-yellow-100 max-w-4xl mx-auto leading-relaxed text-justify font-semibold  space-x-10">
             <span className="text-amber-500 text-2xl">Test Strategy & Risk-Based Planning </span>
-            <span className="text-cyan-400 text-3xl">LLM & Gen-AI Response Validation (Accuracy, Bias, Hallucinations) </span>
+            <span className="text-cyan-400 text-3xl">Automated LLM & Gen-AI Response Validation</span>
+            <span className="text-cyan-400 text-sm">(Accuracy, Bias, Hallucinations) </span>
             <span className="text-lime-300 text-xl">Scalable UI/mobile automation frameworks </span>
-            <span className="text-indigo-500 text-2xl">Intelligent API, Contract & Schema Validation </span>
+            <span className="text-indigo-500 text-2xl">Intelligent API Automation, Contract & Schema Validation </span>
             <span className="text-fuchsia-400 text-xl">Mocking & service virtualization </span>
             <span className="text-orange-600 text-2xl">Database validation </span>
             <span className="text-teal-300 text-xl">Test data management </span>
@@ -188,7 +189,7 @@ export function Portfolio() {
               Let's Talk
             </p>
             <p className="text-2xl text-white text-left mb-4">
-              hemendravishnoi@gmail.com
+              <a href="mailto:hemendravishnoi@gmail.com?subject=Let's%20connect&body=Hi%20Hemendra,">hemendravishnoi@gmail.com</a>
             </p>
           </div>
           <div className="text-slate-500 text-left md:text-right">
