@@ -82,50 +82,50 @@ export function ExperienceTimeline() {
           </h4>
           <ul className="space-y-2"> */}
 
-            {experiences.map((exp, index) => <Card key={exp.id} delay={index * 0.1} className="relative overflow-hidden">
-              <div className="p-6 cursor-pointer" onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-cyan-950/30 border border-cyan-900 text-cyan-400">
-                      <Briefcase className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-100">
-                        {exp.role}
-                      </h3>
-                      <p className="text-cyan-400 font-medium">{exp.company}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-500 text-sm font-mono bg-slate-950/50 px-3 py-1 rounded-full border border-slate-800 w-fit">
-                    <Calendar className="w-4 h-4" />
-                    {exp.period}
-                  </div>
-                </div>
+    {experiences.map((exp, index) => <Card key={exp.id} delay={index * 0.1} className="relative overflow-hidden">
+      <div className="p-6 cursor-pointer" onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-full bg-cyan-950/30 border border-cyan-900 text-cyan-400">
+              <Briefcase className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-slate-100">
+                {exp.role}
+              </h3>
+              <p className="text-cyan-400 font-medium">{exp.company}</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 text-slate-500 text-sm font-mono bg-slate-950/50 px-3 py-1 rounded-full border border-slate-800 w-fit">
+            <Calendar className="w-4 h-4" />
+            {exp.period}
+          </div>
+        </div>
 
-                <p className="text-slate-400 mb-4 pl-[60px]">{exp.description}</p>
+        <p className="text-slate-400 mb-4 pl-[60px]">{exp.description}</p>
 
-                <div className="pl-[60px] flex flex-wrap gap-2 mb-2">
-                  {exp.stack.map(tech => <Badge key={tech} variant="default">
-                    {tech}
-                  </Badge>)}
-                </div>
+        <div className="pl-[60px] flex flex-wrap gap-2 mb-2">
+          {exp.stack.map(tech => <Badge key={tech} variant="default">
+            {tech}
+          </Badge>)}
+        </div>
 
-                <div className="p-6 pl-[84px] flex flex-wrap gap-2 mb-2">
-                  <h4 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">
-                    Key Achievements
-                  </h4>
-                  {exp.details.map((detail, i) => <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 flex-shrink-0" />
-                    {detail}
-                  </li>)}
-                </div>
+        <div className="p-6 pl-[84px] flex flex-wrap gap-2 mb-2">
+          <h4 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">
+            Key Achievements
+          </h4>
+          {exp.details.map((detail, i) => <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 flex-shrink-0" />
+            {detail}
+          </li>)}
+        </div>
 
-                {/* <div className="absolute top-6 right-6 text-slate-600">
+        {/* <div className="absolute top-6 right-6 text-slate-600">
           {expandedId === exp.id ? <ChevronUp /> : <ChevronDown />}
         </div> */}
-              </div>
+      </div>
 
-              {/* <AnimatePresence>
+      {/* <AnimatePresence>
         {expandedId === exp.id && <motion.div initial={{
           height: 0,
           opacity: 0
@@ -149,10 +149,10 @@ export function ExperienceTimeline() {
           </div>
         </motion.div>}
       </AnimatePresence> */}
-            </Card>)}
+    </Card>)}
 
 
-          {/* </ul>
+    {/* </ul>
         </div>
       </motion.div>}
     </AnimatePresence> */}
